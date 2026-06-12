@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Georgia", serif;
+  overflow: hidden;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffeef8 0%, #fff5f7 100%);
+}
+
+.card {
+  position: relative;
+  width: 350px;
+  height: 500px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  perspective: 1200px;
+}
+
+.card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: pink;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform-origin: bottom;
+  z-index: 10;
+}
+
+.card-front h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.card-front p {
+  font-size: 18px;
+  letter-spacing: 2px;
+  opacity: 0.9;
+}
+
+.card.open .card-front {
+  transform: rotateX(-170deg);
+  z-index: 1;
+}
+
+.card-inner-top {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 0;
+  background: linear-gradient(to bottom, #fff0f6, #ffe4f0);
+  border-radius: 15px 15px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  opacity: 0;
+  transform-style: preserve-3d;
+  transition: opacity 0.6s ease-in-out 0.2s;
+  z-index: 5;
+}
+
+.card.open .card-inner-top {
+  opacity: 1;
+}
+
+.flowers {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flower {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  animation: float 3s ease-in-out infinite;
+}
+
+.flower-1 {
+  top: 15%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.flower-2 {
+  top: 5%;
+  left: 35%;
+  animation-delay: 0.2s;
+}
+
+.flower-3 {
+  top: 10%;
+  right: 10%;
+  animation-delay: 0.4s;
+}
+
+.flower-4 {
+  top: 50%;
+  left: 15%;
+  animation-delay: 0.6s;
+}
+
+.flower-5 {
+  top: 55%;
+  left: 45%;
+  animation-delay: 0.8s;
+}
+
+.flower-6 {
+  top: 45%;
+  right: 15%;
+  animation-delay: 1s;
+}
+
+.flower-7 {
+  top: 75%;
+  left: 25%;
+  animation-delay: 1.2s;
+}
+
+.flower-8 {
+  top: 70%;
+  left: 60%;
+  animation-delay: 1.4s;
+}
+
+.flower-9 {
+  top: 65%;
+  right: 20%;
+  animation-delay: 1.6s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.card-inner-bottom {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  background: linear-gradient(to top, #fff0f6, #ffe4f0);
+  border-radius: 0 0 15px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  opacity: 0;
+  transform-style: preserve-3d;
+  transition: opacity 0.6s ease-in-out 0.4s;
+  z-index: 5;
+  box-shadow: inset 0 -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card.open .card-inner-bottom {
+  opacity: 1;
+}
+
+.letter-content {
+  text-align: center;
+  color: #333;
+  max-height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  padding-right: 10px;
+}
+
+.letter-content::-webkit-scrollbar {
+  display: none;
+}
+
+.greeting {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff1493;
+  margin-bottom: 15px;
+  animation: slideIn 0.6s ease-out 0.5s both;
+}
+
+.message {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 20px;
+  animation: slideIn 0.6s ease-out 0.6s both;
+}
+
+.signature {
+  font-size: 13px;
+  color: #ff1493;
+  font-style: italic;
+  animation: slideIn 0.6s ease-out 0.7s both;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #fff0f6 0%, #fff 100%);
+  border-radius: 15px;
+  z-index: -1;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
