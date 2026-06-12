@@ -39,7 +39,7 @@ function App() {
               hurting your feelings, I'm sorry if I'm not treating you right ,
               I'm sorry for all my stupid behavior I know I always mess things
               up, I'm really grateful na nag sstay ka parin sakin, Thank you so
-              much for your love
+              much for your love I love you always mwauhhhhh.
             </p>
             <p className="signature">-Cyan</p>
           </div>
