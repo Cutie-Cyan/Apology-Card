@@ -32,16 +32,16 @@ function App() {
 
         <div className="card-inner-bottom">
           <div className="letter-content">
-            <p className="greeting">My Dearest,</p>
+            <p className="greeting">My Babii</p>
             <p className="message">
-              I wanted to take a moment to say I'm sorry. You mean the world to
-              me, and I hope you can forgive me.
+              Hello bii I want mag apology sayo kasi may mga nasabi ako na
+              hurtful words nakaraan, you don't deserve that, I'm sorry for
+              hurting your feelings, I'm sorry if I'm not treating you right ,
+              I'm sorry for all my stupid behavior I know I always mess things
+              up, I'm really grateful na nag sstay ka parin sakin, Thank you so
+              much for your love
             </p>
-            <p className="signature">
-              With all my love,
-              <br />
-              Forever yours ❤️
-            </p>
+            <p className="signature">-Cyan</p>
           </div>
         </div>
       </div>
